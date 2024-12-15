@@ -1,24 +1,24 @@
 # 机场订阅，名称不能重复
 proxy-providers:
+  chaoji:
+    type: http
+    interval: 3600
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: 🟢 直连
+    url: "订阅"
+ 
   cf:
     type: http
-    interval: 1800
+    interval: 3600
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 🟢 直连
-    url: "机场订阅"
-
-  鸡场:
-    type: http
-    interval: 1800
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 🟢 直连
-    url: "机场订阅"
+    url: "订阅" 
       
 # 用于下载订阅时指定UA
 global-ua: clash
@@ -34,15 +34,14 @@ allow-lan: true
 unified-delay: true
 tcp-concurrent: true
   
-geodata-mode: false
-geodata-loader: standard
-geo-auto-update: true
-geo-update-interval: 48
-geox-url:
-  geoip: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
-  geosite: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
-  mmdb: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb"
-  asn: "https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb"
+#geodata-loader: standard
+#geo-auto-update: true
+#geo-update-interval: 48
+#geox-url:
+#  geoip: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
+#  geosite: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
+#  mmdb: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb"
+#  asn: "https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb"
   
 # 控制面板
 external-controller: 0.0.0.0:9090
@@ -50,8 +49,8 @@ secret: ""
 external-ui: ui
 external-ui-url: "https://ghp.ci/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
 
-# 匹配进程 always/strict/off
-find-process-mode: strict
+# 匹配进程 always/strict/off  路由器off
+find-process-mode: strict 
 global-client-fingerprint: chrome
 keep-alive-idle: 600
 keep-alive-interval: 30
@@ -98,7 +97,6 @@ dns:
   ipv6: false
   respect-rules: true
   # 模式切换 redir-host / fake-ip
-  enhanced-mode: fake-ip
   fake-ip-range: 28.0.0.1/8
   # 模式切换 whitelist/blacklist 
   # 黑名单模式表示如果匹配成功则不返回 Fake-IP, 白名单模式时只有匹配成功才返回 Fake-IP
@@ -132,34 +130,26 @@ proxies:
   udp: true
  
 # 锚点
-pr: &pr {type: select, proxies: [🚀 节点选择, 🔯 香港故转, 🔯 日本故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🌐 全部节点, 🟢 直连]}
+#pr: &pr {type: select, proxies: [🚀 节点选择, 🔯 香港故转, 🔯 日本故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🌐 全部节点, 🟢 直连]}
 # 策略组
 proxy-groups:
-  - {name: 🚀 节点选择, type: select, proxies: [🔯 香港故转, 🔯 日本故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🌐 全部节点, 🟢 直连]}
-  - {name: 📹 YouTube,!!merge <<: *pr}
-  - {name: 🍀 Google,!!merge <<: *pr}
-  - {name: 🤖 ChatGPT,!!merge <<: *pr}
-  - {name: 👨🏿‍💻 GitHub,!!merge <<: *pr}
-  - {name: 🐬 OneDrive,!!merge <<: *pr}
-  - {name: 🪟 Microsoft,!!merge <<: *pr}
-  - {name: 🎵 TikTok,!!merge <<: *pr}
-  - {name: 📲 Telegram,!!merge <<: *pr}
-  - {name: 🎥 NETFLIX,!!merge <<: *pr}
-  - {name: ✈️ Speedtest,!!merge <<: *pr}
-  - {name: 💶 PayPal,!!merge <<: *pr}
-  - {name: 🍎 Apple, type: select, proxies: [🟢 直连, 🚀 节点选择]}
+  - {name: 🚀 节点选择, type: select, proxies: [♻️ 自动选择, 🟢 直连], use: [chaoji, cf]}
+  - {name: 📹 YouTube,type: select, proxies: [🚀 节点选择,♻️ 自动选择, 🟢 直连], use: [chaoji, cf]}
+  - {name: 🍀 Google,type: select, proxies: [🚀 节点选择,♻️ 自动选择, 🟢 直连], use: [chaoji, cf]}
+  - {name: 🤖 ChatGPT,type: select, proxies: [🚀 节点选择,♻️ 自动选择, 🟢 直连], use: [chaoji, cf]}
+  - {name: 👨🏿‍💻 GitHub,type: select, proxies: [🚀 节点选择,♻️ 自动选择, 🟢 直连], use: [chaoji, cf]}
+  - {name: 🐬 OneDrive,type: select, proxies: [🟢 直连, 🚀 节点选择], use: [chaoji, cf]}
+  - {name: 🪟 Microsoft,type: select, proxies: [🟢 直连, 🚀 节点选择], use: [chaoji, cf]}
+  - {name: 🎵 TikTok,type: select, proxies: [🚀 节点选择,♻️ 自动选择, 🟢 直连], use: [chaoji, cf]}
+  - {name: 📲 Telegram,type: select, proxies: [🚀 节点选择,♻️ 自动选择, 🟢 直连], use: [chaoji, cf]}
+  - {name: 🎥 NETFLIX,type: select, proxies: [🚀 节点选择,♻️ 自动选择, 🟢 直连], use: [chaoji, cf]}
+  - {name: ✈️ Speedtest,type: select, proxies: [🚀 节点选择,♻️ 自动选择, 🟢 直连], use: [chaoji, cf]}
+  - {name: 💶 PayPal,type: select, proxies: [🚀 节点选择,♻️ 自动选择, 🟢 直连], use: [chaoji, cf]}
+  - {name: 🍎 Apple, type: select, proxies: [🟢 直连, 🚀 节点选择], use: [chaoji, cf]}
   - {name: 🎯 全球直连, type: select, proxies: [🟢 直连, 🚀 节点选择]}
-  - {name: 🐟 漏网之鱼,!!merge <<: *pr}
-  - {name: 🇭🇰 香港节点, type: select, include-all: true, filter: "(?i)港|hk|hongkong|hong kong"}
-  - {name: 🇯🇵 日本节点, type: select, include-all: true, filter: "(?i)日|jp|japan"}
-  - {name: 🇺🇲 美国节点, type: select, include-all: true, filter: "(?i)美|us|unitedstates|united states"}
-  - {name: 🔯 香港故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
-  - {name: 🔯 日本故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$" }
-  - {name: ♻️ 香港自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
-  - {name: ♻️ 日本自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$" }
-  - {name: ♻️ 美国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
+  - {name: 🐟 漏网之鱼,type: select, proxies: [🚀 节点选择, 🟢 直连]}
   - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(直连)).)*$"}
-  - {name: 🌐 全部节点, type: select, include-all: true}
+  - {name: 🌐 全部节点, type: select, include-all: true, filter: "^((?!(直连)).)*$"}
 rules:
   - RULE-SET,private_domain,🟢 直连
   - RULE-SET,apple_domain,🍎 Apple
