@@ -1,4 +1,5 @@
-#自定义代理
-#DOMAIN 域名
-#DOMAIN-SUFFIX 域名后缀
-DOMAIN,sub.cjcloud.cc
+# 自定义代理
+# DOMAIN域名 
+# DOMAIN-SUFFIX 域名后缀
+payload:
+  - DOMAIN,sub.cjcloud.cc
