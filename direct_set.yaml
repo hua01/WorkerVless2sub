@@ -1,4 +1,5 @@
 #自定义直连 
 #DOMAIN域名 
 #DOMAIN-SUFFIX 域名后缀
+payload:
  - DOMAIN-SUFFIX,huax.us.kg
