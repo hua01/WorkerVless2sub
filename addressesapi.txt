@@ -5,7 +5,6 @@ www.okcupid.com#okcupid
 www.udacity.com#udacity.tw
 shopify.com#shopify
 www.baipiao.eu.org#baipiao
-edtunnel-dgp.pages.dev#edtunnel
 www.zsu.gov.ua#zsu
 www.visa.com.sg#visa.sg
 www.ipaddress.my#ipaddress
@@ -44,7 +43,6 @@ www.sean-now.com#sean
 www.ipget.net#ipget
 www.4chan.org#4chan
 www.udemy.com#udemy
-edgetunnel.anycast.eu.org#edgetunnel
-cdn-b100.xn--b6gac.eu.org#cdn-b100
+
 
 
