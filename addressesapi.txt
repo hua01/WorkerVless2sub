@@ -2,6 +2,7 @@ ip.sb#ip.sb
 fbi.gov#fbi
 whatismyipaddress.com#whatismyipaddress
 www.okcupid.com#okcupid
+www.wto.org#wto
 www.udacity.com#udacity.tw
 shopify.com#shopify
 www.baipiao.eu.org#baipiao
@@ -25,7 +26,6 @@ singapore.com#singapore
 malaysia.com#malaysia
 www.iplocation.net#iplocation
 www.csgo.com#csgo
-www.wto.org#wto
 skk.moe#skk
 www.gov.se#gov
 www.whatismyip.com#whatismyip
