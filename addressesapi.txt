@@ -35,7 +35,6 @@ www.gco.gov.qa#gco
 www.shopify.com#shopify
 www.glassdoor.com#glassdoor
 www.gov.ua#gov
-time.cloudflare.com#cloudflare
 www.boba88slot.com#boba88slot
 log.bpminecraft.com#bpminecraft
 www.who.int#who
