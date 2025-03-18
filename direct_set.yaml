@@ -16,4 +16,5 @@ payload:
   - DOMAIN,host.257999.xyz
   - DOMAIN,rabbit.gushao.club
   - DOMAIN,kami.562455.xyz
+  - DOMAIN,pool.ntp.org
 
