@@ -97,39 +97,48 @@ proxies:
   type: direct
   udp: true
  
-# 锚点
-#pr: &pr {type: select, proxies: [🚀 节点选择, 🔯 香港故转, 🔯 日本故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🌐 全部节点, 🟢 直连]}
+
 # 策略组
 proxy-groups:
-  - {name: 🚀 节点选择, type: select, proxies: [♻️ 自动选择, 🟢 直连, ⚡ speed], use: [cf, speed]}
+  - {name: 🚀 节点选择, type: select, proxies: [♻️ 自动选择, 🟢 直连, ⚡ speed, 🐼 CM优选, ⚖️ CF负载均衡, ⚖️ speed负载均衡], use: [cf]}
   - {name: ⚡ speed, type: select, use: [speed]}
-  - {name: 📹 YouTube,type: select, proxies: [🚀 节点选择,♻️ 自动选择, 🟢 直连], use: [cf, speed]}
-  - {name: 🍀 Google,type: select, proxies: [🚀 节点选择,♻️ 自动选择, 🟢 直连], use: [cf, speed]}
-  - {name: 🤖 ChatGPT,type: select, proxies: [🚀 节点选择,♻️ 自动选择, 🟢 直连], use: [cf, speed]}
-  - {name: 👨🏿‍💻 GitHub,type: select, proxies: [🚀 节点选择,♻️ 自动选择, 🟢 直连], use: [cf, speed]}
-  - {name: 🐬 OneDrive,type: select, proxies: [🟢 直连, 🚀 节点选择], use: [cf, speed]}
-  - {name: 🪟 Microsoft,type: select, proxies: [🟢 直连, 🚀 节点选择], use: [cf, speed]}
-  - {name: 🎵 TikTok,type: select, proxies: [🚀 节点选择,♻️ 自动选择, 🟢 直连], use: [cf, speed]}
-  - {name: 📲 Telegram,type: select, proxies: [🚀 节点选择,♻️ 自动选择, 🟢 直连], use: [cf, speed]}
+  - {name: 🐼 CM优选, type: select, use: [cm]}
+  - {name: 📹 YouTube,type: select, proxies: [🚀 节点选择,♻️ 自动选择, 🟢 直连, 🐼 CM优选, ⚖️ CF负载均衡, ⚖️ speed负载均衡], use: [cf, speed]}
+  - {name: 🍀 Google,type: select, proxies: [🚀 节点选择,♻️ 自动选择, 🟢 直连, 🐼 CM优选, ⚖️ CF负载均衡, ⚖️ speed负载均衡], use: [cf, speed]}
+  - {name: 🎮 游戏平台,type: select, proxies: [🚀 节点选择,♻️ 自动选择, 🟢 直连, 🐼 CM优选, ⚖️ CF负载均衡, ⚖️ speed负载均衡], use: [cf, speed]}
+  - {name: 🤖 ChatGPT,type: select, proxies: [🚀 节点选择,♻️ 自动选择, 🟢 直连, 🐼 CM优选, ⚖️ CF负载均衡, ⚖️ speed负载均衡], use: [cf, speed]}
+  - {name: 👨🏿‍💻 GitHub,type: select, proxies: [🚀 节点选择,♻️ 自动选择, 🟢 直连, 🐼 CM优选, ⚖️ CF负载均衡, ⚖️ speed负载均衡], use: [cf, speed]}
+  - {name: 🐬 OneDrive,type: select, proxies: [🟢 直连, 🚀 节点选择, 🐼 CM优选], use: [cf, speed]}
+  - {name: 🖥 Microsoft,type: select, proxies: [🟢 直连, 🚀 节点选择, 🐼 CM优选], use: [cf, speed]}
+  - {name: 🎵 TikTok,type: select, proxies: [🚀 节点选择,♻️ 自动选择, 🟢 直连, 🐼 CM优选, ⚖️ CF负载均衡, ⚖️ speed负载均衡], use: [cf, speed]}
+  - {name: 📲 Telegram,type: select, proxies: [🚀 节点选择,♻️ 自动选择, 🟢 直连, 🐼 CM优选, ⚖️ CF负载均衡, ⚖️ speed负载均衡], use: [cf, speed]}
   - {name: 🎥 NETFLIX,type: select, proxies: [🚀 节点选择,♻️ 自动选择, 🟢 直连], use: [cf, speed]}
   - {name: 💶 PayPal,type: select, proxies: [🚀 节点选择,♻️ 自动选择, 🟢 直连], use: [cf, speed]}
-  - {name: 🍎 Apple, type: select, proxies: [🟢 直连, 🚀 节点选择], use: [cf, speed]}
-  - {name: 🎯 全球直连, type: select, proxies: [🟢 直连, 🚀 节点选择]}
-  - {name: 🐟 漏网之鱼,type: select, proxies: [🚀 节点选择, 🟢 直连, ⚡ speed]}
+  - {name: 🍎 Apple, type: select, proxies: [🟢 直连, 🚀 节点选择, 🐼 CM优选], use: [cf, speed]}
+  - {name: 🎯 全球直连, type: select, proxies: [🟢 直连, 🚀 节点选择, 🐼 CM优选]}
+  - {name: 🐟 漏网之鱼,type: select, proxies: [🚀 节点选择, 🟢 直连, 🐼 CM优选, ⚡ speed]}
   - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(直连)).)*$"}
-  - {name: 🌐 全部节点, type: select, include-all: true, filter: "^((?!(直连)).)*$"}
+  - {name: ⚖️ CF负载均衡, type: load-balance, use: [cf], tolerance: 20, interval: 300, strategy: consistent-hashing, url: http://www.google.com/generate_204} 
+  - {name: ⚖️ speed负载均衡, type: fallback, use: [speed], tolerance: 20, interval: 300, strategy: consistent-hashing, url: http://www.google.com/generate_204, filter: "^((?!(x3|x1.5)).)*$"}
+ # - {name: 🌐 全部节点, type: select, include-all: true, filter: "^((?!(直连)).)*$"}
 rules:
   - RULE-SET,private_domain,🟢 直连
   - RULE-SET,direct-set,🟢 直连
   - RULE-SET,proxylite,🚀 节点选择
   - RULE-SET,proxy_set,🚀 节点选择
+  - RULE-SET,epicgames_domain, 🎮 游戏平台
+  - RULE-SET,steam_domain, 🎮 游戏平台
+  - RULE-SET,steam@cn_domain, 🎮 游戏平台
+  - RULE-SET,sony_domain, 🎮 游戏平台
+  - RULE-SET,nintendo_domain, 🎮 游戏平台
+  - RULE-SET,nintendo@cn_domain, 🎮 游戏平台
   - RULE-SET,apple_domain,🍎 Apple
   - RULE-SET,ai,🤖 ChatGPT
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
   - RULE-SET,youtube_domain,📹 YouTube
   - RULE-SET,google_domain,🍀 Google
   - RULE-SET,onedrive_domain,🐬 OneDrive
-  - RULE-SET,microsoft_domain,🪟 Microsoft
+  - RULE-SET,microsoft_domain,🖥 Microsoft
   - RULE-SET,tiktok_domain,🎵 TikTok
   - RULE-SET,telegram_domain,📲 Telegram
   - RULE-SET,netflix_domain,🎥 NETFLIX
@@ -162,8 +171,14 @@ rule-providers:
     url: "https://raw.githubusercontent.com/hua01/WorkerVless2sub/refs/heads/main/proxy_set.yaml"
     
   private_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
-  proxylite: {!!merge <<: *class, url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/master/ProxyLite.list"}
-  ai: {!!merge <<: *class, url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/master/AI.list"}
+  proxylite: {!!merge <<: *class, url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/proxy.list"}
+  ai: {!!merge <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-ai-!cn.mrs"}
+  epicgames_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/epicgames.mrs"}
+  steam_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam.mrs"}
+  steam@cn_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam@cn.mrs"}
+  sony_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/sony.mrs"}
+  nintendo_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/nintendo.mrs"}
+  nintendo@cn_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/nintendo@cn.mrs"}
   youtube_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
   google_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
   github_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"}
@@ -177,7 +192,6 @@ rule-providers:
   gfw_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs"}
   geolocation-!cn: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
   cn_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
-  
   cn_ip: {!!merge <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"}
   google_ip: {!!merge <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs"}
   telegram_ip: {!!merge <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
