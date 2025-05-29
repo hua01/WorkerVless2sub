@@ -3,6 +3,7 @@
 # DOMAIN-SUFFIX 域名后缀
 payload:
   - DOMAIN-SUFFIX,huax.us.kg
+  - DOMAIN-SUFFIX,aliyuncs.com
   - DOMAIN-SUFFIX,argotunnel.com
   - DOMAIN-SUFFIX,836502.xyz
   - DOMAIN-SUFFIX,fd.gp.mba
