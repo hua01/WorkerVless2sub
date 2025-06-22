@@ -18,4 +18,5 @@ payload:
   - DOMAIN,rabbit.gushao.club
   - DOMAIN,kami.562455.xyz
   - DOMAIN,pool.ntp.org
+  - DOMAIN,ifconfig.me
 
