@@ -19,4 +19,5 @@ payload:
   - DOMAIN,kami.562455.xyz
   - DOMAIN,pool.ntp.org
   - DOMAIN,ifconfig.me
+  - DOMAIN,test-ipv6.com
 
