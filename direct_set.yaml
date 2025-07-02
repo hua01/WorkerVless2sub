@@ -20,4 +20,5 @@ payload:
   - DOMAIN,pool.ntp.org
   - DOMAIN,ifconfig.me
   - DOMAIN-SUFFIX,test-ipv6.com
+  - DOMAIN,icanhazip.com
 
