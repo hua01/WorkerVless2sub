@@ -9,7 +9,7 @@ payload:
   - DOMAIN-SUFFIX,7pzzv.us
   - DOMAIN-SUFFIX,stripchat.com
   - DOMAIN-SUFFIX,xhamsterlive.com
-  
+  - IP-CIDR,45.156.19.132/32
 
   
 
