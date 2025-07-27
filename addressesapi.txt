@@ -1,18 +1,18 @@
-ip.sb#ip.sb
-fbi.gov#fbi
-whatismyipaddress.com#whatismyipaddress
-www.okcupid.com#okcupid
-www.wto.org#wto
-www.udacity.com#udacity.tw
-shopify.com#shopify
-www.baipiao.eu.org#baipiao
-www.zsu.gov.ua#zsu
-www.visa.com.sg#visa.sg
-www.ipaddress.my#ipaddress
-time.is#time
-russia.com#russia
-www.visa.com#visa
-www.digitalocean.com#digitalocean
+ip.sb#🇺🇸 ip.sb
+fbi.gov#🇺🇸 fbi
+whatismyipaddress.com#hk whatismyipaddress
+www.okcupid.com#🇺🇸 okcupid
+www.wto.org#🇺🇸 wto
+www.udacity.com#tw udacity.tw
+shopify.com#🇺🇸 shopify
+www.baipiao.eu.org#🇺🇸 baipiao
+www.zsu.gov.ua#🇺🇸 zsu
+www.visa.com.sg#sg visa.sg
+www.ipaddress.my#🇺🇸 ipaddress
+time.is#🇺🇸 time
+russia.com#ru russia
+www.visa.com#🇺🇸 visa
+www.digitalocean.com#🇺🇸 digitalocean
 www.whoer.net#whoer
 www.visakorea.com#visakorea
 iplocation.io#iplocation
