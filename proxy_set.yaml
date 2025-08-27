@@ -12,6 +12,8 @@ payload:
   - DOMAIN-SUFFIX,doppiocdn.net
   - DOMAIN-SUFFIX,doppiocdn.org
   - DOMAIN-SUFFIX,mypikpak.com
+  - DOMAIN-SUFFIX,lib.baomitu.com
+  - DOMAIN-SUFFIX,ttou.j03og.app
   - IP-CIDR,45.156.19.132/32
   - IP-CIDR,149.112.112.10/32
 
