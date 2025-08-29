@@ -8,7 +8,7 @@ payload:
   - DOMAIN-SUFFIX,fd.gp.mba
   - DOMAIN-SUFFIX,fd.lc.mba
   - DOMAIN-SUFFIX,118918.xyz
-#  - DOMAIN-SUFFIX,ivy.ddns-ip.net
+  - DOMAIN-SUFFIX,ivy.ddns-ip.net
   - DOMAIN-SUFFIX,swoop.ip-ddns.com
   - DOMAIN,mr-orgin.1888866.xyz
   - DOMAIN,jd-orgin.1888866.xyz
