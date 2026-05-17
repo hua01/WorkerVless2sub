@@ -1,1 +1,5 @@
-
+# 自定义直连 
+# DOMAIN域名 
+# DOMAIN-SUFFIX 域名后缀
+payload:
+  - DOMAIN,004430.xyz
