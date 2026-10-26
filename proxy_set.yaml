@@ -15,6 +15,7 @@ payload:
   - DOMAIN-SUFFIX,lib.baomitu.com
   - DOMAIN-SUFFIX,ttou.j03og.app
   - DOMAIN-SUFFIX,tu.ymawv.la
+  - DOMAIN,tu.djhdhs.us
   - IP-CIDR,45.156.19.132/32
   - IP-CIDR,149.112.112.10/32
 
