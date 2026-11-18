@@ -22,5 +22,5 @@ payload:
   - DOMAIN-SUFFIX,test-ipv6.com
   - DOMAIN,icanhazip.com
   - DOMAIN,zhouql.vip
-  - DOMAIN,domainforsub.work
+  - DOMAIN-SUFFIX,domainforsub.work
 
