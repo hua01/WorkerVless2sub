@@ -21,4 +21,6 @@ payload:
   - DOMAIN,ifconfig.me
   - DOMAIN-SUFFIX,test-ipv6.com
   - DOMAIN,icanhazip.com
+  - DOMAIN,zhouql.vip
+  - DOMAIN,domainforsub.work
 
